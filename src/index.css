@@ -1,0 +1,113 @@
+/*
+ * Styles globaux du site
+ * -----------------------
+ * Ce fichier contient:
+ * 1. Les imports Tailwind (ne pas toucher)
+ * 2. Les styles de base (police, couleur de fond, comportement du scroll)
+ * 3. Les animations (apparition au défilement, flottement du hero)
+ *
+ * POLICES UTILISÉES (chargées dans index.html via Google Fonts):
+ * - "Cormorant Garamond" : titres (h1, h2, h3, h4)
+ * - "Jost" : texte courant
+ */
+
+/* Imports Tailwind — ne pas modifier */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === STYLES DE BASE === */
+@layer base {
+  html {
+    /* Scroll fluide quand on clique sur les liens du menu */
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Police par défaut + couleur du texte + couleur de fond */
+    font-family: 'Jost', system-ui, sans-serif;
+    color: #1a3a5c;
+    background-color: #f7f3ec;
+  }
+  body {
+    font-family: 'Jost', system-ui, sans-serif;
+  }
+  /* Tous les titres utilisent la police serif élégante */
+  h1, h2, h3, h4 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+}
+
+/* === CLASSES UTILITAIRES === */
+@layer utilities {
+  /* Pour utiliser la police serif sur un élément précis */
+  .font-serif-display {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+  /* Pour utiliser la police du texte courant */
+  .font-body {
+    font-family: 'Jost', system-ui, sans-serif;
+  }
+  /* Équilibrage automatique des lignes de texte (pour les titres longs) */
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* === ANIMATIONS === */
+
+/* Apparition en remontant (utilisé dans le hero) */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Fondu simple (utilisé dans le hero) */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+/* Flottement lent (utilisé pour l'image de fond du hero) */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Classes d'animation prêtes à l'emploi */
+.animate-fade-up {
+  animation: fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.animate-fade-in {
+  animation: fade-in 1.2s ease both;
+}
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+/*
+ * Animation "reveal" — apparition au défilement
+ * Les éléments avec la classe .reveal sont invisibles au départ,
+ * puis apparaissent en douceur quand ils entrent dans l'écran.
+ * Le composant Reveal.tsx gère ça automatiquement.
+ */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Voile sombre sur l'image de fond du hero pour que le texte soit lisible */
+.hero-overlay {
+  background: linear-gradient(180deg, rgba(15, 42, 74, 0.40) 0%, rgba(15, 42, 74, 0.60) 60%, rgba(15, 42, 74, 0.82) 100%);
+}
+
+.section-fade-bottom {
+  -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+}

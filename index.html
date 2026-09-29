@@ -1,0 +1,40 @@
+<!doctype html>
+<!--
+  index.html — Page HTML principale
+  ----------------------------------
+  C'est le point d'entrée du site. Le contenu est injecté par React
+  dans la balise <div id="root">.
+
+  CE FICHIER CONTIENT :
+  - Le titre de l'onglet du navigateur (<title>)
+  - La description pour le référencement Google (<meta name="description">)
+  - Les liens vers les polices Google (Cormorant Garamond + Jost)
+  - L'icône du site (favicon)
+
+  POUR CHANGER LE TITRE DE L'ONGLET : modifiez la balise <title>
+  POUR CHANGER LA DESCRIPTION GOOGLE : modifiez la balise <meta name="description">
+-->
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Titre affiché dans l'onglet du navigateur et dans les résultats Google -->
+    <title>B.L. — Boulangerie artisanale pour professionnels</title>
+    <!-- Description affichée dans les résultats de recherche Google -->
+    <meta name="description" content="B.L., boulangerie artisanale dédiée aux professionnels. Farines Tradition Label Rouge, farines bio, autolyse et pousse lente. Établissements scolaires, restaurants, hôtels, collectivités." />
+    <meta property="og:image" content="https://bolt.new/static/og_default.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://bolt.new/static/og_default.png" />
+    <!-- Chargement des polices Google -->
+    <!-- Cormorant Garamond = police des titres | Jost = police du texte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- React injecte tout le contenu du site dans cette div -->
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
