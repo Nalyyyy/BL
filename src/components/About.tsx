@@ -70,7 +70,7 @@ export function About() {
               {/* Changez le chiffre "5" ou le texte selon votre besoin */}
               <div className="absolute -bottom-6 -right-4 sm:-right-8 bg-[#0f2a4a] text-[#f7f3ec] rounded-2xl px-7 py-5 shadow-xl">
                 <p className="font-serif-display text-4xl font-semibold text-[#e8c170]">Wouahh</p>
-                <p className="text-sm tracking-wide mt-0.5">il a l'air bon ce pain</p>
+                <p className="text-sm tracking-wide mt-0.5">il a l'air bon ce pain !</p>
               </div>
             </div>
           </Reveal>
