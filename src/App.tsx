@@ -21,6 +21,7 @@ import { Products } from '@/components/Products';
 import { Reviews } from '@/components/Reviews';
 import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
+import { Message } from '@/components/Message';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Products />
         <Reviews />
         <Contact />
+        <Message />
       </main>
       <Footer />
     </div>

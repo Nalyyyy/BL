@@ -16,10 +16,11 @@ import logo from "../assets/Logo.png"
 // Liens du menu — label = texte affiché, href = section cible (avec #)
 const links = [
   { label: 'Accueil', href: '#accueil' },
-  { label: 'Nos pains', href: '#produits' },
   { label: 'Notre histoire', href: '#histoire' },
+  { label: 'Nos pains', href: '#produits' },
   { label: 'Avis', href: '#avis' },
   { label: 'Contact', href: '#contact' },
+  { label: 'Devis', href: '#devis' },
 ];
 
 export function Navbar() {
